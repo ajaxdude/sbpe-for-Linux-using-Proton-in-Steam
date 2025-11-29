@@ -27,6 +27,9 @@ Download the latest SBPE Windows release from the official repository:
 1. Download the `sbpe-windows-1.7.0.zip` file
 2. Extract the contents to your preferred location
 3. Copy the extracted files to your StarBreak_modded directory (see step 2)
+4. **IMPORTANT**: Replace the `genmipmaps.py` file with the Linux-compatible version from this repository
+   - The Windows version has compatibility issues with Linux path handling
+   - Our modified version fixes these issues to work properly on Linux systems
 
 ### 2. Create Modded Directory Structure
 
@@ -34,7 +37,8 @@ Download the latest SBPE Windows release from the official repository:
 2. Create a directory named **StarBreak_modded**
 3. Copy the contents of the **StarBreak** folder into the **StarBreak_modded/StarBreak/** directory
 4. Copy the extracted SBPE Windows release files into the **StarBreak_modded/** directory
-5. Your directory structure should look like:
+5. Replace `genmipmaps.py` with the Linux-compatible version from this repository (this fixes path handling issues on Linux)
+6. Your directory structure should look like:
    ```
    ~/.local/share/Steam/steamapps/common/
    ├── StarBreak/
@@ -143,3 +147,4 @@ game = Z:\home\john\.local\share\Steam\steamapps\common\StarBreak_modded\StarBre
 - The dummy `sbpe.exe` file is required for Steam to recognize the directory as a game
 - All paths must use the full absolute path for reliable operation
 - The `Z:\` prefix is required in `config.ini` because Proton maps Linux filesystems to Windows drive letters
+- **Critical**: The `genmipmaps.py` file from the Windows release must be replaced with the Linux-compatible version from this repository to fix path handling issues on Linux systems
